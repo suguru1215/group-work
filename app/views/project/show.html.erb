@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="card-box">
+      <div class="box-image">
+        <%= image_tag @project.image %>
+      </div>
+      <div class="project-title">
+        <h3><%= @project.name %></h3>
+
+        <hr>
+
+        <%= @project.content %>
+
+        <hr>
+
+      </div>
+
+      <div class="panel panel-primary">
+        <% @tasks.each do |task| %>
+          <% if task.header %>
+            <div class="list-group-item list-group-item-success">
+              <i class="mdi-social-school"> <%= task.title %></i>
+            </div>
+          <% else %>
+            <%= link_to [task.project, task], class: "list-group-item list-group-item-info" do %>
+             <%= task.title %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content padding-space">
+          <div role="tabpanel" class="tab-pane active" id="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+          <div role="tabpanel" class="tab-pane" id="profile">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+          <div role="tabpanel" class="tab-pane" id="messages">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+          <div role="tabpanel" class="tab-pane" id="settings">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
+      </div>
+    </div>
+
+<hr>
+
+    <div class="card-box">
+      <div class="card-header">
+        <h4>Chat</h4>
+      </div>
+
+      <form>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="ひとこと">
+          </div>
+        </div>
+      </form>
+  </div>
+</div>

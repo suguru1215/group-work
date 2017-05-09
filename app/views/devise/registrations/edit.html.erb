@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">プロフィール</div>
+      <div class="panel-body">
+        <div class="container">
+           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render 'shared/devisemes' %>
+          <div class="form-group">
+            <%= f.text_field :fullname, :class => 'form-control', :placeholder => "フルネーム", autofocus: true %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.email_field :email, :class => 'form-control', :placeholder => "メールアドレス" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_area :description, rows: 5, cols: 25,  :placeholder => "ひとこと", :class => 'form-control' %>
+          </div>
+        
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+        
+          <div class="form-group">
+            <%= f.password_field :password, :class => 'form-control', :placeholder => "新しいパスワード（変更しない場合は空白のまま）", autocomplete: "off" %>
+          </div>
+        
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => "パスワード確認", autocomplete: "off" %>
+          </div>
+        
+          <div class="form-group">
+            <%= f.password_field :current_password, :class => 'form-control', :placeholder => "現在の(旧)パスワード", autocomplete: "off" %>
+          </div>
+        
+          <div class="actions">
+            <%= f.submit "保存", :class => "btn btn-primary" %>
+          </div>
+        <% end %>
+
+  </div>
+</div>
